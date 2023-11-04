@@ -1,0 +1,12 @@
+.navbar {
+    background-color: var(--tropical-indigo-color);
+}
+
+.navbar-default .navbar-brand {
+    color: var(--white-color);
+    transition: all .4s ease;
+}
+
+.navbar-default .navbar-brand:hover {
+    color: var(--timberwolf-color);
+}
