@@ -1,7 +1,6 @@
 "use client"
 
 import Card from './card'
-import Navbar from './navbar'
 import styles from './page.module.css'
 import React, { createContext, useContext, useState } from 'react';
 
@@ -11,17 +10,14 @@ export default function Home() {
   const [movies, setMovies] = useState([]);
   return (
     <MoviesContext.Provider value={movies}>
-      <body>
-        <Navbar />
-        <main className={styles.mainBox}>
-          <section className={styles.sectionBox}>
-            <div className={styles.searchBox}>
-              <BtnBuscar setMovies={setMovies} />
-            </div>
-          </section>
-          <MoviesGrid />
-        </main>
-      </body>
+      <main className={styles.mainBox}>
+        <section className={styles.sectionBox}>
+          <div className={styles.searchBox}>
+            <BtnBuscar setMovies={setMovies} />
+          </div>
+        </section>
+        <MoviesGrid />
+      </main>
     </MoviesContext.Provider>
   )
 

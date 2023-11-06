@@ -1,5 +1,5 @@
 .navbar {
-    background-color: var(--tropical-indigo-color);
+    background-image: var(--tropical-indigo-color);
 }
 
 .navbar-default .navbar-brand {

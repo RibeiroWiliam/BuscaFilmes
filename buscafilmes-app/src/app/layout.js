@@ -1,4 +1,5 @@
 import './globals.css'
+import Navbar from './navbar'
 
 export const metadata = {
   title: 'BuscaFilmes - O filme que você procura está aqui!',
@@ -16,6 +17,7 @@ export default function RootLayout({ children }) {
           integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous" />
       </head>
       <body>
+        <Navbar />
         {children}
       </body>
     </html>

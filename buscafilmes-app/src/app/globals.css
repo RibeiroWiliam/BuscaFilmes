@@ -1,5 +1,5 @@
 :root {
-  --tropical-indigo-color: #9381FF;
+  --tropical-indigo-color: linear-gradient(135deg, #9381FF 40%, rgb(92, 56, 253));
   --hover-color: #765ffc;
   --snow-color: #FFFBFE;
   --white-color: #ffffff;
@@ -14,4 +14,14 @@
   margin: 0;
   box-sizing: border-box;
   font-family: 'Playpen Sans', cursive;
+}
+
+body {
+  width: 100vw;
+  height: 100vh;
+  background-color: var(--timberwolf-color);
+}
+
+a {
+  text-decoration: none;
 }
