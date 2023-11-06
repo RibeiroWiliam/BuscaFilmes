@@ -1,4 +1,5 @@
 import styles from './card.css'
+import Link from 'next/link'
 
 export default function Card(movie) {
     console.log(movie)
@@ -9,7 +10,11 @@ export default function Card(movie) {
             <div class="img-box" className={styles.imgBox}>
                 <img src={url} alt={movie.movie.title} />
             </div>
-            <a href={"./movie/" + movie.movie.id} class="detalhes-link" role="button"><span class="text">Detalhes</span></a>
+            <Link href={"./movie/" + movie.movie.id}>
+                <div class="detalhes-link">
+                    <span class="text">Detalhes</span>
+                </div>
+            </Link>
         </div>
     )
 }
