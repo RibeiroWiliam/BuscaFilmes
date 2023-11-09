@@ -1,0 +1,66 @@
+.card-box,
+.cardBox {
+    background-color: var(--white-color);
+    position: relative;
+    height: 340px;
+    width: 200px;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+    overflow: hidden;
+    border-radius: 10px;
+}
+
+img-box,
+.imgBox {
+    width: 100%;
+    height: 300px;
+
+}
+
+.img-box img,
+.imgBox img {
+    width: 100%;
+    height: 300px;
+    object-fit: cover;
+}
+
+.detalhes-link {
+    background-image: var(--tropical-indigo-color);
+    align-items: center;
+    position: absolute;
+    bottom: 0;
+    font-weight: 700;
+    height: 40px;
+    width: 100%;
+    letter-spacing: .4px;
+    line-height: 1;
+    padding: 10px;
+    text-decoration: none;
+    font-size: 18px;
+    color: var(--white-color);
+    text-align: center;
+    transition: all .4s ease;
+    touch-action: manipulation;
+    cursor: pointer;
+}
+
+/* CSS */
+
+.detalhes-link span {
+    transition: all 200ms;
+}
+
+.detalhes-link:hover span {
+    transform: scale(.9);
+    opacity: .75;
+}
+
+@media screen and (max-width: 991px) {
+    .detalhes-link {
+        font-size: 15px;
+        height: 50px;
+    }
+
+    .detalhes-link span {
+        line-height: 50px;
+    }
+}

@@ -1,4 +1,4 @@
-import styles from './card.css'
+import styles from '../css/poster.css'
 
 export default function Poster({ movie }) {
     console.log(movie)

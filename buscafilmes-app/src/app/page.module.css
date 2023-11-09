@@ -5,37 +5,6 @@
   justify-content: center;
 }
 
-.searchBox {
-  overflow: hidden;
-  width: 100%;
-  border-radius: 10px;
-  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
-  align-items: center;
-  justify-content: space-between;
-}
-
-.searchInput {
-  width: calc(100% - 50px);
-  font-size: 20px;
-  padding: 1% 30px;
-  border: none;
-  outline: none;
-}
-
-.btnBuscar {
-  width: 50px;
-  padding: 1%;
-  font-size: 20px;
-  background-image: var(--tropical-indigo-color);
-  border: none;
-  color: var(--white-color);
-  transition: all .4s ease;
-}
-
-.btnBuscar:hover {
-  background-color: var(--hover-color);
-}
-
 .movieList {
   width: 100%;
   padding: 4% 10%;

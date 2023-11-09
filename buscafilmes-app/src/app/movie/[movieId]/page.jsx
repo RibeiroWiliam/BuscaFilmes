@@ -1,13 +1,14 @@
 'use client'
 
-import Poster from '@/app/poster';
-import { useParams } from 'next/navigation'
+import Poster from '@/app/components/poster';
+import { useParams, useRouter } from 'next/navigation'
 import React, { useState, useEffect } from 'react';
 
-function Movie() {
+export default function Movie() {
+    const router = useRouter();
     const params = useParams();
     const [movie, setMovie] = useState([]);
-    const [imageLoaded, setImageLoaded] = useState(false);
+    const movieGenres = movie.genres ? movie.genres.map(genre => genre.name).join(", ") : "";
 
     useEffect(() => {
         const apiKey = "afbeee5dc8a56d84b3457702342ba299";
@@ -15,32 +16,27 @@ function Movie() {
             .then(response => response.json())
             .then(response => {
                 setMovie(response);
-                const image = new Image();
-                image.src = `https://image.tmdb.org/t/p/w500${response.movie.poster_path}`;
-                const interval = setInterval(() => {
-                    if (image.complete) {
-                        setImageLoaded(true);
-                        clearInterval(interval);
-                    }
-                }, 100);
             })
             .catch(err => console.error(err));
-    }, [params.movieId]);
+    }, []);
+
+    const handleGoBack = () => {
+        router.back();
+    }
 
     return (
         <main>
             <section>
-                {imageLoaded ? (
-                    <Poster movie={movie} />
-                ) : (
-                    <div>Loading...</div>
-                )}
+                <button onClick={handleGoBack}>Voltar</button>
+                <Poster movie={movie} />
             </section>
             <section>
                 <div>Movie ID: {params.movieId}</div>
+                <div>{movie.title}</div>
+                <div>{movieGenres}</div>
+                <div>{movie.release_date}</div>
+                <div>{movie.overview}</div>
             </section>
         </main>
     );
 }
-
-export default Movie;
