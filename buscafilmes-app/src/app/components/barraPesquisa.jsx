@@ -7,8 +7,9 @@ import styles from '../css/barraPesquisa.css'
 
 export default function BarraPesquisa() {
     const [query, setQuery] = useState('');
-    const [showModal, setShowModal] = useState(false);
-    const [filters, setFilters] = useState([]);
+    const [language, setLanguage] = useState([]);
+    const [year, setYear] = useState([]);
+    const [showFilters, setShowFilters] = useState(false);
     const router = useRouter();
 
     const handleInputChange = (event) => {
@@ -18,15 +19,24 @@ export default function BarraPesquisa() {
     const handleFormSubmit = (event) => {
         event.preventDefault();
         if (router.pathname == "/search") {
-            router.push(`../${query}`);
+            router.push(`../${query}/${language}/${year}`);
         }
         else {
-            router.push(`/search/${query}`);
+            router.push(`/search/${query}/${language}/${year}`);
         }
     }
 
-    const handleFilterClick = () => {
-        setShowModal(true);
+    function handleFilterClick() {
+        if (showFilters) {
+            setShowFilters(false);
+        }
+        else {
+            setShowFilters(true);
+        }
+    }
+
+    function handleClose() {
+        setShowFilters(false);
     }
 
     return (
@@ -38,40 +48,25 @@ export default function BarraPesquisa() {
                 </div>
                 <button type="button" class="btnFilters" onClick={handleFilterClick}><i class='bx bx-slider'></i></button>
             </form>
-            <FilterModal onClose={() => setShowModal(false)} filters={filters} setFilters={setFilters} />
-            <div>
-                {filters.map((filter) => (
-                    <Tag tag={filter} />
-                ))}
-            </div>
-        </div>
-    )
-}
+            {showFilters && (
+                <div class="filtersBox">
+                    <h2>Escolha seus filtros:</h2>
+                    <form >
+                        <label for='language'> Idioma: </label>
+                        <select value={language} name='language'>
+                            <option value="pt-BR" defaultChecked> Português (Brasil) </option>
+                            <option value="en-US">Inglês</option>
+                        </select>
 
-function FilterModal({ onClose, filters, setFilters }) {
-    const handleFilterChange = (event) => {
-        const { name, checked } = event.target;
-        if (checked) {
-            setFilters([...filters, name]);
-        } else {
-            setFilters(filters.filter((filter) => filter !== name));
-        }
-    }
+                        <label for='year'> Ano de Lançamento: </label>
+                        <input type="number" min="1900" max="2023" value={year} name="year" />
 
-    const handleFormSubmit = (event) => {
-        event.preventDefault();
-        onClose();
-    }
+                        <button type="submit" onClick={handleFormSubmit}>Aplicar filtros</button>
+                        <button type="button" class="btnClose" onClick={handleClose}>Fechar</button>
+                    </form>
+                </div>
+            )}
 
-    return (
-        <div className="modal">
-            <div className="modal-content">
-                <h2>Selecione os filtros:</h2>
-                <label htmlFor="year">Ano:</label>
-                <input type="checkbox" name="year" id="year" onChange={handleFilterChange} />
-                <button type="submit" onClick={handleFormSubmit}>Enviar</button>
-                <button type="button" onClick={onClose}>Fechar</button>
-            </div>
         </div>
     )
 }

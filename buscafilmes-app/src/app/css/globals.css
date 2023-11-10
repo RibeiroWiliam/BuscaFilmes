@@ -1,11 +1,11 @@
 :root {
   --tropical-indigo-color: linear-gradient(135deg, rgb(92, 56, 253) 40%, #9381FF);
-  --hover-color: linear-gradient(135deg,rgb(70, 29, 253)  40%, #9381FF);
+  --hover-color: linear-gradient(135deg, rgb(70, 29, 253) 40%, #9381FF);
   --snow-color: #FFFBFE;
   --white-color: #ffffff;
   --timberwolf-color: #D0CFCF;
   --davygrey-color: #565254;
-  --orange-color: linear-gradient(135deg,#D68910  40%, #F5B041);
+  --orange-color: linear-gradient(135deg, #D68910 40%, #F5B041);
   --orange-hover-color: linear-gradient(135deg, #B9770E 40%, #F5B041);
 }
 
@@ -21,7 +21,7 @@
 body {
   width: 100vw;
   height: 100vh;
-  background-color: var(--timberwolf-color);
+  padding-top: 50px;
 }
 
 a {

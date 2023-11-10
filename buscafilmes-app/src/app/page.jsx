@@ -25,9 +25,7 @@ export default function Home() {
     <MoviesContext.Provider value={movies}>
       <main className={styles.mainBox}>
         <section className={styles.sectionBox}>
-          <div className={styles.searchBox}>
-            <BarraPesquisa setMovies={setMovies} />
-          </div>
+          <BarraPesquisa setMovies={setMovies} />
         </section>
         <MoviesGrid />
       </main>

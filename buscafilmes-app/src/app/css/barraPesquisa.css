@@ -1,9 +1,10 @@
-form{
+form {
     display: flex;
     justify-content: space-between;
 }
 
 .searchBox {
+    background-color: var(--white-color);
     overflow: hidden;
     width: calc(100% - 75px);
     border-radius: 10px;
@@ -21,6 +22,7 @@ form{
 }
 
 .btnSearch {
+    height: 100%;
     width: 50px;
     padding: .75%;
     font-size: 25px;
@@ -49,3 +51,12 @@ form{
 .btnFilters:hover {
     background-image: var(--orange-hover-color);
 }
+
+.filtersBox {
+    margin-top: 10px;
+    padding: 1%;
+    background-color: var(--timberwolf-color);
+    border-radius: 10px;
+}
+
+.filtersBox .btnClose {}
