@@ -1,6 +1,11 @@
+form{
+    display: flex;
+    justify-content: space-between;
+}
+
 .searchBox {
     overflow: hidden;
-    width: 100%;
+    width: calc(100% - 75px);
     border-radius: 10px;
     box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
     align-items: center;
@@ -15,16 +20,32 @@
     outline: none;
 }
 
-.btnBuscar {
+.btnSearch {
     width: 50px;
-    padding: 1%;
-    font-size: 20px;
+    padding: .75%;
+    font-size: 25px;
     background-image: var(--tropical-indigo-color);
     border: none;
     color: var(--white-color);
     transition: all .4s ease;
 }
 
-.btnBuscar:hover {
-    background-color: var(--hover-color);
+.btnSearch:hover {
+    background-image: var(--hover-color);
+}
+
+.btnFilters {
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+    border-radius: 10px;
+    width: 50px;
+    padding: 0.5% 0.75%;
+    font-size: 25px;
+    background-image: var(--orange-color);
+    border: none;
+    color: var(--white-color);
+    transition: all .4s ease;
+}
+
+.btnFilters:hover {
+    background-image: var(--orange-hover-color);
 }

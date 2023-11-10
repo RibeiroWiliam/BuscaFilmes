@@ -16,12 +16,14 @@ export default function Search() {
 
     useEffect(() => {
         const apiKey = "afbeee5dc8a56d84b3457702342ba299"
-        fetch(`https://api.themoviedb.org/3/search/movie?query=${params.query}&api_key=${apiKey}`)
-            .then((response) => response.json())
-            .then((data) => {
-                const movies = data.results;
-                setMovies(movies);
-            });
+        if (params.query != undefined) {
+            fetch(`https://api.themoviedb.org/3/search/movie?query=${params.query}&language=pt-BR&api_key=${apiKey}`)
+                .then((response) => response.json())
+                .then((data) => {
+                    const movies = data.results;
+                    setMovies(movies);
+                });
+        }
     }, [params.query]);
 
     return (
@@ -42,12 +44,16 @@ export default function Search() {
 
 function MoviesGrid() {
     const movies = useContext(MoviesContext);
+    const params = useParams();
 
     return (
-        <section className={styles.movieList}>
-            {movies.map((movie) => (
-                <Card movie={movie} />
-            ))}
+        <section>
+            {movies && movies.length > 0 && <label>{movies.length} Resultados para {params.query}</label>}      
+            <div className={styles.movieList}>
+                {movies.map((movie) => (
+                    <Card key={movie.id} movie={movie} />
+                ))}
+            </div>
         </section>
     )
 }
