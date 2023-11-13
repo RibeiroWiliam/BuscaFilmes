@@ -24,7 +24,6 @@ form {
 .btnSearch {
     height: 100%;
     width: 50px;
-    padding: .75%;
     font-size: 25px;
     background-image: var(--tropical-indigo-color);
     border: none;
@@ -40,7 +39,7 @@ form {
     box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
     border-radius: 10px;
     width: 50px;
-    padding: 0.5% 0.75%;
+    padding: 0.75%;
     font-size: 25px;
     background-image: var(--orange-color);
     border: none;

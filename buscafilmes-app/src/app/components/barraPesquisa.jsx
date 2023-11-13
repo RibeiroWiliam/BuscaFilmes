@@ -1,24 +1,24 @@
 "use client";
 
 import { useEffect, useRef, useState } from "react";
-import { useRouter } from "next/navigation";
+import { useRouter, useSearchParams } from "next/navigation";
 
 import styles from "../css/barraPesquisa.css";
 
 export default function BarraPesquisa() {
   const [query, setQuery] = useState("");
-  const [language, setLanguage] = useState([]);
-  const [year, setYear] = useState([]);
   const [showFilters, setShowFilters] = useState(false);
   const router = useRouter();
 
-  const input = useRef();
+  const input = useRef(),
+    languageInput = useRef(),
+    yearInput = useRef();
+  const searchParams = useSearchParams();
+
+  const year = yearInput.value;
 
   useEffect(() => {
-    if (query != undefined) {
-      input.value = router.query;
-      console.log(router);
-    }
+    input.value = searchParams.get("q");
   }, []);
 
   const handleInputChange = (event) => {
@@ -28,9 +28,9 @@ export default function BarraPesquisa() {
   const handleFormSubmit = (event) => {
     event.preventDefault();
     if (query && router.pathname == "/search") {
-      router.push(`../${query}/${language}/${year}`);
+      router.push(`?q=${query}`);
     } else if (query) {
-      router.push(`/search/${query}/${language}/${year}`);
+      router.push(`/search?q=${query}&year=${year}`);
     }
   };
 
@@ -40,10 +40,6 @@ export default function BarraPesquisa() {
     } else {
       setShowFilters(true);
     }
-  }
-
-  function handleClose() {
-    setShowFilters(false);
   }
 
   return (
@@ -69,31 +65,25 @@ export default function BarraPesquisa() {
       </form>
       {showFilters && (
         <div class="filtersBox">
-          <h2>Escolha seus filtros:</h2>
+          <div>Filtrar por:</div>
           <form>
             <label for="language"> Idioma: </label>
-            <select value={language} name="language">
-              <option value="pt-BR" defaultChecked>
-                {" "}
-                Português (Brasil){" "}
-              </option>
+            <select name="language" ref={languageInput}>
+              <option value="pt-BR">Português (Brasil)</option>
               <option value="en-US">Inglês</option>
             </select>
 
             <label for="year"> Ano de Lançamento: </label>
             <input
+              ref={yearInput}
               type="number"
               min="1900"
               max="2023"
-              value={year}
               name="year"
             />
 
             <button type="submit" onClick={handleFormSubmit}>
               Aplicar filtros
-            </button>
-            <button type="button" class="btnClose" onClick={handleClose}>
-              Fechar
             </button>
           </form>
         </div>
