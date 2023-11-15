@@ -14,7 +14,7 @@ export default function TopRated() {
     const apiKey = "afbeee5dc8a56d84b3457702342ba299";
 
     fetch(
-      `https://api.themoviedb.org/3/movie/now_playing?language=pt-BR&page=1&api_key=${apiKey}`
+      `https://api.themoviedb.org/3/movie/top_rated?language=pt-BR&page=1&api_key=${apiKey}`
     )
       .then((response) => response.json())
       .then((data) => {

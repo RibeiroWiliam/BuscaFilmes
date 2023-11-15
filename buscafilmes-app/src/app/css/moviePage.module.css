@@ -1,8 +1,49 @@
 .main{
-    padding: 1%;
+    justify-content: space-around;
     display:flex;
+    padding: 2% 3%;
+    background-color: var(--davygrey-color);
+}
+
+.posterBox{
+    min-width: 30vw;
+    max-width: 30vw;
 }
 
 .detailsBox{
+    width: 60%;
     padding: 2%;
+    justify-content: center;
+    color: var(--white-color);
 }
+
+.title{
+    font-size: 35px;
+}
+
+.subtitle{
+    color: var(--timberwolf-color);
+    font-size: 28px;
+    margin-bottom: 30px;
+}
+
+.detailsBox div{
+    margin-bottom: 15px;
+    font-size: 16px;
+}
+
+.btnGoBack{
+    background-color: transparent;
+    border: none;
+    position: absolute;
+    padding: 2% 5%;
+    font-size: 20px;
+    color: var(--white-color);
+    transition: all .4s ease;  
+}
+
+.btnGoBack:hover {
+    margin-left: -40px;
+    color: #9381FF;
+}
+

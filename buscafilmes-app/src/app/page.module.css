@@ -13,3 +13,7 @@
   justify-content: space-around;
   row-gap: 15px;
 }
+
+.slider{
+  background-color: blue;
+}
