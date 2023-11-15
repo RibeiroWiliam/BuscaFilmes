@@ -40,7 +40,7 @@ function MoviesGrid() {
 
   return (
     <section>
-      <label>Filmes em Alta</label>
+      <label>Melhor avaliados</label>
       <div className={styles.movieList}>
         {Array.isArray(movies) &&
           movies.map((movie) => <Card key={movie.id} movie={movie} />)}

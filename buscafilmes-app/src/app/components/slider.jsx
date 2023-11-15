@@ -1,66 +1,57 @@
 import Link from "next/link";
-import styles from "../css/poster.module.css";
+import { useRef, useEffect } from "react";
+import { register } from "swiper/element/bundle";
+import styles from "../css/slider.module.css";
+register();
 
 export default function Slider({ movies }) {
-  const navButtons = [];
+  const swiperElRef = useRef(null);
 
-  for (let i = 0; i < movies.length; i++) {
-    navButtons.push(<NavButton slideNumber={i} />);
-  }
+  useEffect(() => {
+    // listen for Swiper events using addEventListener
+    swiperElRef.current.addEventListener("swiperprogress", (e) => {
+      const [swiper, progress] = e.detail;
+      console.log(progress);
+    });
+
+    swiperElRef.current.addEventListener("swiperslidechange", (e) => {
+      console.log("slide changed");
+    });
+  }, []);
 
   return (
-    <div id="carouselBox" class="carousel slide">
-      <div class="carousel-indicators">{navButtons}</div>
-      <div class="carousel-inner">
-        {Array.isArray(movies) &&
-          movies.map((movie) => <CarouselItem key={movie.id} movie={movie} />)}
-      </div>
-      <button
-        class="carousel-control-prev"
-        type="button"
-        data-bs-target="#carouselBox"
-        data-bs-slide="prev"
-      >
-        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-        <span class="visually-hidden">Previous</span>
-      </button>
-      <button
-        class="carousel-control-next"
-        type="button"
-        data-bs-target="#carouselBox"
-        data-bs-slide="next"
-      >
-        <span class="carousel-control-next-icon" aria-hidden="true"></span>
-        <span class="visually-hidden">Next</span>
-      </button>
-    </div>
+    // Slider main container
+    <swiper-container
+      className={styles.swiperSlide}
+      ref={swiperElRef}
+      slides-per-view="7"
+      speed="500"
+      loop="true"
+      css-mode="true"
+      pagination="true"
+      pagination-clickable="true"
+      navigation="true"
+    >
+      {movies.map((movie) => (
+        <SwiperSlide key={movie.id} movie={movie} />
+      ))}
+    </swiper-container>
   );
 }
 
-function NavButton(slideNumber) {
-  return (
-    <button
-      type="button"
-      data-bs-target="#carouselBox"
-      data-bs-slide-to={slideNumber}
-      aria-current="true"
-    ></button>
-  );
-}
-
-function CarouselItem({ movie }) {
+function SwiperSlide({ movie }) {
   const url = "https://image.tmdb.org/t/p/w500" + movie.poster_path;
-  console.log(url);
 
   return (
-    <div class="carousel-item">
+    <swiper-slide lazy="true" className={styles.swiperSlide}>
       <Link href={"../movie/" + movie.id}>
-        <div class="card-box" className={styles.cardBox}>
-          <div class="img-box" className={styles.imgBox}>
-            <img src={url} alt={movie.title} />
-          </div>
-        </div>
+        <img
+          src={url}
+          alt={movie.title}
+          loading="lazy"
+          className={styles.img}
+        />
       </Link>
-    </div>
+    </swiper-slide>
   );
 }

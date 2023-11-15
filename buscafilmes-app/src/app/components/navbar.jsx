@@ -34,7 +34,7 @@ export default function Navbar() {
             <ul class="navbar-nav me-auto mb-2 mb-lg-0 nav-underline">
               <NavLink href="/" name="Home" />
               <NavLink href="/nowplaying" name="Em Alta" />
-              <NavLink href="/toprated" name="Melhores avaliados" />
+              <NavLink href="/toprated" name="Melhor avaliados" />
               <NavLink href="/about" name="Sobre" />
             </ul>
           </div>

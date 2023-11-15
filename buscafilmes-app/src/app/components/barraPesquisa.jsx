@@ -30,7 +30,7 @@ export default function BarraPesquisa() {
     if (query && router.pathname == "/search") {
       router.push(`?q=${query}`);
     } else if (query) {
-      router.push(`/search?q=${query}&year=${year}`);
+      router.push(`/search?q=${query}`);
     }
   };
 
