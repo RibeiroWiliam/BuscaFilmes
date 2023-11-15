@@ -2,11 +2,23 @@
     background-image: var(--tropical-indigo-color);
 }
 
+.navbar-brand-img{
+    margin-right: 7.5px;
+}
+
 .navbar .navbar-brand, .nav-item .nav-link{
     color: var(--white-color);
     transition: all .4s ease;
 }
 
-.navbar .navbar-brand:hover, .nav-item .nav-link:hover {
+.navbar .navbar-brand:hover{
     color: var(--timberwolf-color);
+}
+
+.nav-item .nav-link:hover, .nav-item.active .nav-link{
+    color: var(--white-color);
+}
+
+#navbarSupportedContent.show{
+    margin-top: 10px;
 }
