@@ -24,7 +24,7 @@ export default function Slider({ movies }) {
     <swiper-container
       className={styles.swiperSlide}
       ref={swiperElRef}
-      slides-per-view="7"
+      slides-per-view="5"
       speed="500"
       loop="true"
       css-mode="true"

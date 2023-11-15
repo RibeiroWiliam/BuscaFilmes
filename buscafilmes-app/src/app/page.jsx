@@ -37,12 +37,12 @@ export default function Home() {
       <section className={styles.sectionBox}>
         <BarraPesquisa setMovies={setHypeMovies} />
       </section>
-      <div>
+      <div className={styles.sliderBox}>
         Em Alta
         <Link href="/nowplaying"> Ver mais</Link>
         <Slider movies={hypeMovies} className={styles.slider} />
       </div>
-      <div>
+      <div className={styles.sliderBox}>
         Melhor avaliados
         <Link href="/nowplaying"> Ver mais</Link>
         <Slider movies={topMovies} className={styles.slider} />
