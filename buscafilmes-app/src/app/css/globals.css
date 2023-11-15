@@ -1,5 +1,5 @@
 :root {
-  --tropical-indigo-color: linear-gradient(135deg, rgb(92, 56, 253) 40%, #9381FF);
+  --tropical-indigo-color: linear-gradient(135deg, #5c38fd 40%, #9381FF);
   --hover-color: linear-gradient(135deg, rgb(70, 29, 253) 40%, #9381FF);
   --snow-color: #FFFBFE;
   --white-color: #ffffff;

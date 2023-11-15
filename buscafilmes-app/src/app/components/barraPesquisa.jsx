@@ -59,7 +59,7 @@ export default function BarraPesquisa() {
             <i class="bx bx-search"></i>
           </button>
         </div>
-        <button type="button" class="btnFilters" onClick={handleFilterClick}>
+        <button type="button" class="btnFilters" disabled>
           <i class="bx bx-slider"></i>
         </button>
       </form>
