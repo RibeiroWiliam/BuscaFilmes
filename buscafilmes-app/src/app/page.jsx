@@ -38,13 +38,17 @@ export default function Home() {
         <BarraPesquisa setMovies={setHypeMovies} />
       </section>
       <div className={styles.sliderBox}>
-        Em Alta
-        <Link href="/nowplaying"> Ver mais</Link>
+        <Link href="/nowplaying" className={styles.sliderTitle}>
+          Em Alta
+          <i class="bx bx-right-arrow-alt"></i>
+        </Link>
         <Slider movies={hypeMovies} className={styles.slider} />
       </div>
       <div className={styles.sliderBox}>
-        Melhor avaliados
-        <Link href="/nowplaying"> Ver mais</Link>
+        <Link href="/nowplaying" className={styles.sliderTitle}>
+          Melhor avaliados
+          <i class="bx bx-right-arrow-alt "></i>
+        </Link>
         <Slider movies={topMovies} className={styles.slider} />
       </div>
     </main>

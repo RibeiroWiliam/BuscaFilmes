@@ -52,7 +52,7 @@ function MoviesGrid() {
   return (
     <section>
       {movies && movies.length > 0 && (
-        <label>
+        <label className={styles.gridTitle}>
           {movies.length} Resultados para {search}
         </label>
       )}

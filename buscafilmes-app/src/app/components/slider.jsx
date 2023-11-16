@@ -22,7 +22,6 @@ export default function Slider({ movies }) {
   return (
     // Slider main container
     <swiper-container
-      className={styles.swiperSlide}
       ref={swiperElRef}
       slides-per-view="5"
       speed="500"
@@ -43,7 +42,7 @@ function SwiperSlide({ movie }) {
   const url = "https://image.tmdb.org/t/p/w500" + movie.poster_path;
 
   return (
-    <swiper-slide lazy="true" className={styles.swiperSlide}>
+    <swiper-slide lazy="true">
       <Link href={"../movie/" + movie.id}>
         <img
           src={url}
