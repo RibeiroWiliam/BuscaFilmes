@@ -1,0 +1,9 @@
+.movieGrid {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    row-gap: 15px;
+  }

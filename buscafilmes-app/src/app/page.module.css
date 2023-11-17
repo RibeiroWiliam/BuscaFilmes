@@ -1,6 +1,10 @@
+.mainBox{
+  position: relative;
+}
+
 .sectionBox {
   background-color: var(--davygrey-color);
-  padding: 3% 10%;
+  padding: 2% 7.5%;
   align-items: center;
   justify-content: center;
 }
@@ -9,17 +13,6 @@
   width: 100%;
   padding: 1%;
   font-size: 25px;
-  text-align: center;
-  background-image: var(--tropical-indigo-color);
-  color: var(--white-color);
-}
-
-.movieList {
-  width: 100%;
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-around;
-  row-gap: 15px;
 }
 
 .sliderBox{

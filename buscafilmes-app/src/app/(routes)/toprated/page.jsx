@@ -1,7 +1,7 @@
 "use client";
 
+import MovieGrid from "@/app/components/movieGrid";
 import BarraPesquisa from "../../components/barraPesquisa";
-import Card from "../../components/card";
 import styles from "../../page.module.css";
 import React, { createContext, useContext, useEffect, useState } from "react";
 
@@ -24,27 +24,11 @@ export default function TopRated() {
   }, []);
 
   return (
-    <MoviesContext.Provider value={movies}>
       <main className={styles.mainBox}>
         <section className={styles.sectionBox}>
           <BarraPesquisa setMovies={setMovies} />
         </section>
-        <MoviesGrid />
+        <MovieGrid movies={movies}/>
       </main>
-    </MoviesContext.Provider>
-  );
-}
-
-function MoviesGrid() {
-  const movies = useContext(MoviesContext);
-
-  return (
-    <section>
-      <label className={styles.gridTitle}>Melhor avaliados</label>
-      <div className={styles.movieList}>
-        {Array.isArray(movies) &&
-          movies.map((movie) => <Card key={movie.id} movie={movie} />)}
-      </div>
-    </section>
   );
 }

@@ -1,13 +1,12 @@
 "use client";
 
 import BarraPesquisa from "../../components/barraPesquisa";
-import Card from "../../components/card";
-import React, { createContext, useContext, useEffect, useState } from "react";
+
+import React, { useEffect, useState } from "react";
 
 import styles from "../../page.module.css";
 import { useSearchParams } from "next/navigation";
-
-export const MoviesContext = createContext([]);
+import MovieGrid from "@/app/components/movieGrid";
 
 export default function Search() {
   const [movies, setMovies] = useState([]);
@@ -30,37 +29,20 @@ export default function Search() {
   }, [search]);
 
   return (
-    <MoviesContext.Provider value={movies}>
       <main className={styles.mainBox}>
         <section className={styles.sectionBox}>
-          <div className={styles.searchBox}>
             <BarraPesquisa setMovies={setMovies} />
-          </div>
         </section>
-        <MoviesGrid />
+        <section className={styles.movieList}>
+        {movies && movies.length > 0 && (
+          <div className={styles.gridTitle}>
+            {movies.length} Resultados para {search}
+          </div>
+        )}
+        <MovieGrid movies={movies}/>
+        </section>     
       </main>
-    </MoviesContext.Provider>
   );
 }
 
-function MoviesGrid() {
-  const movies = useContext(MoviesContext);
-  const searchParams = useSearchParams();
 
-  const search = searchParams.get("q");
-
-  return (
-    <section>
-      {movies && movies.length > 0 && (
-        <label className={styles.gridTitle}>
-          {movies.length} Resultados para {search}
-        </label>
-      )}
-      <div className={styles.movieList}>
-        {movies.map((movie) => (
-          <Card key={movie.id} movie={movie} />
-        ))}
-      </div>
-    </section>
-  );
-}
