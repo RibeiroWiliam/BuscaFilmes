@@ -1,9 +1,9 @@
 "use client";
 
 import Link from "next/link";
-import BarraPesquisa from "./components/barraPesquisa";
-import Slider from "./components/slider";
-import styles from "./page.module.css";
+import BarraPesquisa from "../components/barraPesquisa";
+import Slider from "../components/slider";
+import styles from "../page.module.css";
 import React, { useEffect, useState } from "react";
 
 export default function Home() {

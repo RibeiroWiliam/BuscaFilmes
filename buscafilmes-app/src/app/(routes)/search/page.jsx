@@ -1,10 +1,10 @@
 "use client";
 
-import BarraPesquisa from "../components/barraPesquisa";
-import Card from "../components/card";
+import BarraPesquisa from "../../components/barraPesquisa";
+import Card from "../../components/card";
 import React, { createContext, useContext, useEffect, useState } from "react";
 
-import styles from "../page.module.css";
+import styles from "../../page.module.css";
 import { useSearchParams } from "next/navigation";
 
 export const MoviesContext = createContext([]);

@@ -6,10 +6,8 @@
 }
 
 .gridTitle{
-  width: 80%;
+  width: 100%;
   padding: 1%;
-  margin-top: 25px;
-  margin-left: 10%;
   font-size: 25px;
   text-align: center;
   background-image: var(--tropical-indigo-color);
@@ -18,7 +16,6 @@
 
 .movieList {
   width: 100%;
-  padding: 4% 10%;
   display: flex;
   flex-wrap: wrap;
   justify-content: space-around;
