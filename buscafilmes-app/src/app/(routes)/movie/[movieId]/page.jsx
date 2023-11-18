@@ -3,7 +3,7 @@
 import Poster from "@/app/components/poster";
 import { useParams, useRouter } from "next/navigation";
 import React, { useState, useEffect } from "react";
-import styles from "../../css/moviePage.module.css";
+import styles from "../../../css/moviePage.module.css";
 import Image from "next/image";
 
 export default function Movie() {

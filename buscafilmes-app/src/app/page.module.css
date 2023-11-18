@@ -1,29 +1,33 @@
-.mainBox{
-  position: relative;
-}
-
 .sectionBox {
-  background-color: var(--davygrey-color);
-  padding: 2% 7.5%;
+  background-color: #fff;
+  padding: 2% 10%;
   align-items: center;
   justify-content: center;
 }
 
+.moviesBox{
+  background-color: #fff;
+}
+
 .gridTitle{
+  color: var( --tropical-indigo-color);
   width: 100%;
-  padding: 1%;
+  padding: 1% 10%;
   font-size: 25px;
 }
 
-.sliderBox{
-  width: 100%;
-  padding: 2% 6%;
+.sliderBox{ 
+  padding: 1% 10%;
+}
+
+.sliderTitleBox{
+ margin-bottom: 5px;
 }
 
 .sliderTitle{
+  color: var( --tropical-indigo-color);
   font-size: 24px;
   text-decoration: none;
-  color: #5c38fd;
 }
 
 .sliderTitle:hover{
@@ -31,7 +35,7 @@
 }
 
 .sliderTitle i{
-  font-size: 30px;
+  margin-top: 2px;
   margin-left: 10px;
 }
 

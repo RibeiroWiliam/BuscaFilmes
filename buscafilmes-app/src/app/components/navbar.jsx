@@ -17,7 +17,7 @@ export default function Navbar() {
               class="navbar-brand-img d-inline-block align-top"
               alt=""
             />
-            BuscaFilmes
+            buscafilmes
           </Link>
           <button
             class="navbar-toggler"
@@ -33,7 +33,7 @@ export default function Navbar() {
           <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <ul class="navbar-nav me-auto mb-2 mb-lg-0 nav-underline">
               <NavLink href="/" name="Home" />
-              <NavLink href="/nowplaying" name="Em Alta" />
+              <NavLink href="/nowplaying" name="Em alta" />
               <NavLink href="/toprated" name="Melhor avaliados" />
               <NavLink href="/about" name="Sobre" />
             </ul>

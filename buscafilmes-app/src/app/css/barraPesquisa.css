@@ -25,7 +25,7 @@ form {
     height: 100%;
     width: 50px;
     font-size: 25px;
-    background-image: var(--tropical-indigo-color);
+    background-color: var(--tropical-indigo-color);
     border: none;
     color: var(--white-color);
     transition: all .4s ease;

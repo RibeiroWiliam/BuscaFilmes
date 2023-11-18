@@ -2,7 +2,7 @@
 .cardBox {
     background-color: var(--white-color);
     position: relative;
-    height: 340px;
+    height: 300px;
     width: 200px;
     box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
     overflow: hidden;

@@ -28,6 +28,7 @@ export default function TopRated() {
         <section className={styles.sectionBox}>
           <BarraPesquisa setMovies={setMovies} />
         </section>
+        <div className={styles.gridTitle}>Melhor avaliados</div>
         <MovieGrid movies={movies}/>
       </main>
   );

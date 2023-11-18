@@ -29,6 +29,7 @@ export default function NowPlaying() {
         <section className={styles.sectionBox}>
           <BarraPesquisa setMovies={setMovies} />
         </section>
+        <div className={styles.gridTitle}>Em alta</div>
         <MovieGrid movies={movies}/>
       </main>
   );

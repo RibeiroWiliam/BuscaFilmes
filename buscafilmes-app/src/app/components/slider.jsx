@@ -23,7 +23,7 @@ export default function Slider({ movies }) {
     // Slider main container
     <swiper-container
       ref={swiperElRef}
-      slides-per-view="7"
+      slides-per-view="6"
       speed="500"
       loop="true"
       css-mode="true"

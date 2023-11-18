@@ -7,13 +7,10 @@ export default function Card(movie) {
 
     return (
         <div class="card-box" className={styles.cardBox}>
+             <Link href={"../movie/" + movie.movie.id}>
             <div class="img-box" className={styles.imgBox}>
                 <img src={url} alt={movie.movie.title} />
             </div>
-            <Link href={"../movie/" + movie.movie.id}>
-                <div class="detalhes-link">
-                    <span class="text">Detalhes</span>
-                </div>
             </Link>
         </div>
     )

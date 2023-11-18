@@ -1,9 +1,8 @@
 .movieGrid {
-    position: absolute;
-    left: 50%;
-    transform: translateX(-50%);
+    width: calc(200px * 7 + 1.5% * 5);
+    margin-left: calc(50% - (100px * 7 + .75% * 5));
     display: flex;
     flex-wrap: wrap;
-    gap: 20px;
+    gap: 1.5%;
     row-gap: 15px;
   }

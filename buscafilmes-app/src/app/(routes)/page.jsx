@@ -37,20 +37,26 @@ export default function Home() {
       <section className={styles.sectionBox}>
         <BarraPesquisa setMovies={setHypeMovies} />
       </section>
-      <div className={styles.sliderBox}>
-        <Link href="/nowplaying" className={styles.sliderTitle}>
-          Em Alta
-          <i class="bx bx-right-arrow-alt"></i>
-        </Link>
-        <Slider movies={hypeMovies} className={styles.slider} />
-      </div>
-      <div className={styles.sliderBox}>
-        <Link href="/nowplaying" className={styles.sliderTitle}>
-          Melhor avaliados
-          <i class="bx bx-right-arrow-alt "></i>
-        </Link>
-        <Slider movies={topMovies} className={styles.slider} />
-      </div>
+      <section class={styles.moviesBox}>
+        <div className={styles.sliderBox}>
+          <div className={styles.sliderTitleBox}>
+            <Link href="/nowplaying" className={styles.sliderTitle}>
+              <span >Em alta</span>
+              <i class='bx bxs-chevron-right' ></i>
+            </Link>
+          </div>
+          <Slider movies={hypeMovies} className={styles.slider} />
+        </div>
+        <div className={styles.sliderBox}>
+          <div className={styles.sliderTitleBox}>
+            <Link href="/nowplaying" className={styles.sliderTitle}>
+              <span>Melhor avaliados</span>
+              <i class='bx bxs-chevron-right' ></i>
+            </Link>
+          </div>
+          <Slider movies={topMovies} className={styles.slider} />
+        </div>
+      </section>
     </main>
   );
 }

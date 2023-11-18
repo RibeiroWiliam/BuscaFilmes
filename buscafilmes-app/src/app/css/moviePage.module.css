@@ -1,20 +1,18 @@
 .main{
     justify-content: space-around;
     display:flex;
-    padding: 2% 3%;
-    background-color: var(--davygrey-color);
+    padding: 2% 8%;
+    background-color: #fff;
 }
 
 .posterBox{
-    min-width: 30vw;
-    max-width: 30vw;
+    min-width: 25vw;
+    max-width: 25vw;
 }
 
 .detailsBox{
     width: 60%;
-    padding: 2%;
     justify-content: center;
-    color: var(--white-color);
 }
 
 .title{
@@ -22,7 +20,7 @@
 }
 
 .subtitle{
-    color: var(--timberwolf-color);
+    color: var(--davygrey-color);
     font-size: 28px;
     margin-bottom: 30px;
 }
@@ -37,7 +35,6 @@
     border: none;
     position: absolute;
     font-size: 20px;
-    color: var(--white-color);
     transition: all .4s ease;  
 }
 
