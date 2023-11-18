@@ -1,7 +1,15 @@
+import Image from "next/image";
 import styles from "../../css/about.module.css";
 
 export default function About() {
     return (
-        <div>Oi</div>
+        <main>
+            <div className={styles.authorBox}>
+                <Image/>
+            </div>
+            <div className={styles.technologiesBox}>
+
+            </div>
+        </main>
     )
-  }
+}
